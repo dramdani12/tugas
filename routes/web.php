@@ -11,9 +11,31 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/mamat', function () {
+    return view('index');
 });
+Route::get('/testmodel', function(){
+	$query =App\Post::all();
+	return $query;
+});
+Route::get('/test', function(){
+	$query =App\Post::find(1);
+	return $query;
+	});
+
+	Route::get('/testm', function(){
+	$query =App\Post::where('title','like','%cepat nikah%')->get();
+	return $query;
+});
+	Route::get('/model', function(){
+	$query =App\Siswa::all();
+	return $query;
+});
+Route::get('/testt', function(){
+	$query =App\Siswa::find(1);
+	return $query;
+	});
+
 
 Auth::routes();
 
