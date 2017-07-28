@@ -32,9 +32,15 @@ Route::get('/test', function(){
 	return $query;
 });
 Route::get('/testt', function(){
-	$query =App\Siswa::find(1);
+	$query =App\Siswa::find(5);
 	return $query;
 	});
+Route::get('/about', function(){
+	return view ('about');
+});
+Route::get('/tambah', function(){
+	return view ('tambah');
+});
 
 
 Auth::routes();
